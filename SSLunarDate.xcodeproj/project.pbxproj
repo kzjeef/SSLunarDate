@@ -16,6 +16,11 @@
 		29AFF72316C223E80093EAB4 /* libSSLunarDate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF70A16C223E80093EAB4 /* libSSLunarDate.a */; };
 		29AFF72916C223E80093EAB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29AFF72716C223E80093EAB4 /* InfoPlist.strings */; };
 		29AFF72C16C223E80093EAB4 /* SSLunarDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF72B16C223E80093EAB4 /* SSLunarDateTests.m */; };
+		29AFF73716C226C40093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
+		29AFF73A16C227550093EAB4 /* SSLunarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF71416C223E80093EAB4 /* SSLunarDate.m */; };
+		29AFF73B16C227550093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
+		29AFF74016C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */; };
+		29AFF74116C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29177BEB16C386F400E66041 /* SSLunarDateType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SSLunarDateType.h; path = SSLunarDate/SSLunarDateType.h; sourceTree = "<group>"; };
 		29AFF70A16C223E80093EAB4 /* libSSLunarDate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSLunarDate.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AFF70D16C223E80093EAB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29AFF71116C223E80093EAB4 /* SSLunarDate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSLunarDate-Prefix.pch"; sourceTree = "<group>"; };
@@ -54,6 +60,10 @@
 		29AFF72816C223E80093EAB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29AFF72A16C223E80093EAB4 /* SSLunarDateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSLunarDateTests.h; sourceTree = "<group>"; };
 		29AFF72B16C223E80093EAB4 /* SSLunarDateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateTests.m; sourceTree = "<group>"; };
+		29AFF73616C226C40093EAB4 /* libLunar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libLunar.c; sourceTree = "<group>"; };
+		29AFF73D16C2B33B0093EAB4 /* libLunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libLunar.h; sourceTree = "<group>"; };
+		29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateFormatter.h; sourceTree = "<group>"; };
+		29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,7 @@
 		29AFF6FF16C223E80093EAB4 = {
 			isa = PBXGroup;
 			children = (
+				29177BEB16C386F400E66041 /* SSLunarDateType.h */,
 				29AFF70F16C223E80093EAB4 /* SSLunarDate */,
 				29AFF72416C223E80093EAB4 /* SSLunarDateTests */,
 				29AFF70C16C223E80093EAB4 /* Frameworks */,
@@ -111,8 +122,12 @@
 		29AFF70F16C223E80093EAB4 /* SSLunarDate */ = {
 			isa = PBXGroup;
 			children = (
+				29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */,
+				29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */,
 				29AFF71216C223E80093EAB4 /* SSLunarDate.h */,
 				29AFF71416C223E80093EAB4 /* SSLunarDate.m */,
+				29AFF73D16C2B33B0093EAB4 /* libLunar.h */,
+				29AFF73616C226C40093EAB4 /* libLunar.c */,
 				29AFF71016C223E80093EAB4 /* Supporting Files */,
 			);
 			path = SSLunarDate;
@@ -244,6 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AFF71516C223E80093EAB4 /* SSLunarDate.m in Sources */,
+				29AFF73716C226C40093EAB4 /* libLunar.c in Sources */,
+				29AFF74016C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29AFF73A16C227550093EAB4 /* SSLunarDate.m in Sources */,
+				29AFF73B16C227550093EAB4 /* libLunar.c in Sources */,
 				29AFF72C16C223E80093EAB4 /* SSLunarDateTests.m in Sources */,
+				29AFF74116C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +417,7 @@
 				29AFF73116C223E80093EAB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29AFF73216C223E80093EAB4 /* Build configuration list for PBXNativeTarget "SSLunarDateTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +426,7 @@
 				29AFF73416C223E80093EAB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

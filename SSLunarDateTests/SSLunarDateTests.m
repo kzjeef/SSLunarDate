@@ -7,9 +7,10 @@
 //
 
 #import "SSLunarDateTests.h"
+#import "SSLunarDate.h"
+
 
 @implementation SSLunarDateTests
-
 - (void)setUp
 {
     [super setUp];
@@ -24,9 +25,10 @@
     [super tearDown];
 }
 
-- (void)testExample
+-(void) testPrintTodayLunar
 {
-    STFail(@"Unit tests are not implemented yet in SSLunarDateTests");
+    SSLunarDate *lunar = [[SSLunarDate alloc] init];
+    [lunar printLunarDay:[NSDate date]];
 }
 
 @end
