@@ -73,22 +73,22 @@
 #include <stdlib.h>
 #include "libLunar.h"
 
-static Date SolarFirstDate = {
+static SSLunarSimpleDate SolarFirstDate = {
     /* Wednesday, 12 a.m., 31 January, 1900 */
     1900, 1, 31, 0, 3, 0
 };
 
-static Date LunarFirstDate = {
+static SSLunarSimpleDate LunarFirstDate = {
     /* Wednesday, 12 a.m., First day, First month, 1900 */
     1900, 1, 1, 0, 3, 0
 };
 
-static Date GanFirstDate = {
+static SSLunarSimpleDate GanFirstDate = {
     /* geng1-nian2 wu4-yue4 jia3-ri4 jia3-shi2 */
     6,          4,       0,       0,           3, 0
 };
 
-static Date ZhiFirstDate = {
+static SSLunarSimpleDate ZhiFirstDate = {
     /* zi3-nian2 yin2-yue4 chen2-ri4 zi3-shi2 */
     0,        2,        4,        0,           3, 0
 };
@@ -368,9 +368,9 @@ int	showHZ = 0;			/* output in hanzi */
 char	*progname;
 
 
-long Solar2Day(Date *d);
-long Solar2Day1(Date *d);
-long Lunar2Day(LibLunarContext *ctx, Date *d);
+long Solar2Day(SSLunarSimpleDate *d);
+long Solar2Day1(SSLunarSimpleDate *d);
+long Lunar2Day(LibLunarContext *ctx, SSLunarSimpleDate *d);
 
 void Day2Lunar(LibLunarContext *ctx, long offset);
 void Day2Solar(LibLunarContext *ctx, long offset);
@@ -381,8 +381,8 @@ int GZcycle();
 
 void	CalGZ();
 int	JieDate(), JieDate();
-void	Report(Date *, Date *, Date *), ReportE();
-void ReportGB(Date *solar, Date *lunar, Date *lunar2);
+void	Report(SSLunarSimpleDate *, SSLunarSimpleDate *, SSLunarSimpleDate *), ReportE();
+void ReportGB(SSLunarSimpleDate *solar, SSLunarSimpleDate *lunar, SSLunarSimpleDate *lunar2);
 void	usage(), Error();
 int CmpDate(int month1, int day1, int month2, int day2);
 
@@ -401,14 +401,14 @@ void freeLunarContext(struct LibLunarContext *context)
     free(context);
 }
 
-Date *getSolarDate(LibLunarContext *ctx)
+SSLunarSimpleDate *getSolarDate(LibLunarContext *ctx)
 {
     if (ctx != NULL)
         return &ctx->_solar;
     return NULL;
 }
 
-Date *getLunarDate(LibLunarContext *ctx)
+SSLunarSimpleDate *getLunarDate(LibLunarContext *ctx)
 {
     if (ctx != NULL)
         return &ctx->_lunar;
@@ -416,7 +416,7 @@ Date *getLunarDate(LibLunarContext *ctx)
 }
 
 void Solar2Lunar(struct LibLunarContext *ctx,
-                 Date *solar)
+                 SSLunarSimpleDate *solar)
 {
     
     long offset;
@@ -446,7 +446,7 @@ void Solar2Lunar(struct LibLunarContext *ctx,
 }
 
 
-void Lunar2Solar(struct LibLunarContext *ctx, Date *lunar)
+void Lunar2Solar(struct LibLunarContext *ctx, SSLunarSimpleDate *lunar)
 {
     long offset;
     int adj;
@@ -476,7 +476,7 @@ void Lunar2Solar(struct LibLunarContext *ctx, Date *lunar)
 /* BYEAR % 4 == 1  and BYEAR % 400 == 1 for easy calculation of leap years */
 /* assert(BYEAR <= SolarFirstDate.year) */
 
-long Solar2Day(Date *d)
+long Solar2Day(SSLunarSimpleDate *d)
 
 {
     return (Solar2Day1(d) - Solar2Day1(&SolarFirstDate));
@@ -484,7 +484,7 @@ long Solar2Day(Date *d)
 
 
 /* Compute the number of days from the Solar date BYEAR.1.1 */
-long Solar2Day1(Date *d)
+long Solar2Day1(SSLunarSimpleDate *d)
 {
     long offset, delta;
     int i;
@@ -508,7 +508,7 @@ long Solar2Day1(Date *d)
 
 
 /* Compute offset days of a lunar date from the beginning of the table */
-long Lunar2Day(LibLunarContext *ctx, Date *d)
+long Lunar2Day(LibLunarContext *ctx, SSLunarSimpleDate *d)
 {
     long offset = 0;
     int year, i, m, nYear, leapMonth;
@@ -542,7 +542,7 @@ void Day2Lunar(LibLunarContext *ctx,
 {
     int i, m, nYear, leapMonth;
     
-    Date *d = &ctx->_lunar;
+    SSLunarSimpleDate *d = &ctx->_lunar;
     
     nYear = make_yday(ctx);
     for (i = 0; i < nYear && offset > 0; i++)
@@ -586,7 +586,7 @@ void Day2Solar(LibLunarContext *ctx,
                long offset)
 {
     int	i, m, days;
-    Date *d = &ctx->_solar;
+    SSLunarSimpleDate *d = &ctx->_solar;
     
     /* offset is the number of days from SolarFirstDate */
     offset -= Solar2Day(&LunarFirstDate);  /* the argument is negative */
@@ -630,7 +630,7 @@ int GZcycle(int g, int z)
 }
 
 
-void CalGZ(long offset, Date *d, Date *g, Date *z)
+void CalGZ(long offset, SSLunarSimpleDate *d, SSLunarSimpleDate *g, SSLunarSimpleDate *z)
 {
     int	year, month;
     
@@ -669,7 +669,7 @@ int CmpDate(int month1, int day1,int  month2,int day2)
  Given a solar date, find the "lunar" date for the purpose of
  calculating the "4-columns" by taking jie into consideration.
  */
-int JieDate(Date *ds, Date *dl)
+int JieDate(SSLunarSimpleDate *ds, SSLunarSimpleDate *dl)
 {
     int m, flag;
     
@@ -777,7 +777,7 @@ int make_mday(LibLunarContext *ctx, int year)
 }
 
 
-void Report(Date *solar, Date *lunar, Date *lunar2)
+void Report(SSLunarSimpleDate *solar, SSLunarSimpleDate *lunar, SSLunarSimpleDate *lunar2)
 {
     if (showHZ)
         ReportGB(solar, lunar, lunar2);
@@ -854,8 +854,8 @@ void ReportE(Date *solar, Date *lunar, Date *lunar2)
     }
 }
 #else
-void ReportE(Date *solar, Date *lunar, Date *lunar2) {}
-void ReportGB(Date *solar, Date *lunar, Date *lunar2) {}
+void ReportE(SSLunarSimpleDate *solar, SSLunarSimpleDate *lunar, SSLunarSimpleDate *lunar2) {}
+void ReportGB(SSLunarSimpleDate *solar, SSLunarSimpleDate *lunar, SSLunarSimpleDate *lunar2) {}
 #endif
 
 

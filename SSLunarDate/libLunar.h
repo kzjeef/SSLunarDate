@@ -13,10 +13,10 @@
 
 
 
-void Lunar2Solar(struct LibLunarContext *ctx, Date *lunar);
-void Solar2Lunar(struct LibLunarContext *ctx, Date *solar);
-Date *getLunarDate(LibLunarContext *ctx);
-Date *getSolarDate(LibLunarContext *ctx);
+void Lunar2Solar(struct LibLunarContext *ctx, SSLunarSimpleDate *lunar);
+void Solar2Lunar(struct LibLunarContext *ctx, SSLunarSimpleDate *solar);
+SSLunarSimpleDate *getLunarDate(LibLunarContext *ctx);
+SSLunarSimpleDate *getSolarDate(LibLunarContext *ctx);
 
 LibLunarContext * createLunarContext();
 void  freeLunarContext(struct LibLunarContext *context);

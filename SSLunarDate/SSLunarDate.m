@@ -15,7 +15,7 @@
     SSLunarDateFormatter *_formater;
     LibLunarContext *_ctx;
     NSDate *_solarDate;
-    Date   _simpleSolarDate;
+    SSLunarSimpleDate   _simpleSolarDate;
 }
 @end
 
@@ -89,7 +89,7 @@
     return [_formater isLeapMonthForDate:_ctx];
 }
 
-- (void) NSDataToLunarDate:(NSDate *) date withDate:(Date *) lunarDate
+- (void) NSDataToLunarDate:(NSDate *) date withDate:(SSLunarSimpleDate *) lunarDate
 {
     unsigned int flags = NSYearCalendarUnit             \
         | NSMonthCalendarUnit | NSDayCalendarUnit       \
