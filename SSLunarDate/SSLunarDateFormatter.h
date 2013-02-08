@@ -12,23 +12,27 @@
 
 @interface SSLunarDateFormatter : NSObject
 
-+ (NSString *) getGanZhiNameForDate:(Date *)lunar;
++ (SSLunarDateFormatter *)sharedLunarDateFormatter;
 
-+ (NSString *) getShengXiaoNameForDate:(Date *)lunar;
+- (NSString *) getGanZhiNameForDate:(LibLunarContext *)lunar;
 
-+ (NSString *) getYearNameForDate:(Date *) lunar;
+- (NSString *) getShengXiaoNameForDate:(LibLunarContext *)lunar;
 
-+ (NSString *) getLunarMonthForDate: (Date *) lunar;
+- (NSString *) getYearNameForDate:(LibLunarContext *) lunar;
 
-+ (NSString *) getDayNameForDate: (Date *) lunar;
+- (NSString *) getLunarMonthForDate: (LibLunarContext *) lunar;
 
-+ (NSString *) getFullLunarStringForDate: (Date *) lunar;
+- (NSString *) getDayNameForDate: (LibLunarContext *) lunar;
 
-+ (BOOL)       isDateLunarHoliday:(Date *) lunar;
+- (NSString *) getFullLunarStringForDate: (LibLunarContext *) lunar;
 
-+ (NSString *) getLunarHolidayNameForDate: (Date *) lunar;
+- (BOOL)       isDateLunarHoliday:(LibLunarContext *) lunar;
 
-+ (BOOL)       isLeapMonthForDate: (Date *) lunar;
+- (NSString *) getLunarHolidayNameForDate: (LibLunarContext *) lunar;
+
+- (BOOL)       isLeapMonthForDate: (LibLunarContext *) lunar;
+
+
 
 
 @end

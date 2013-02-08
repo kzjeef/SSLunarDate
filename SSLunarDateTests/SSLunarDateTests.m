@@ -8,6 +8,7 @@
 
 #import "SSLunarDateTests.h"
 #import "SSLunarDate.h"
+#import "SSLunarDateFormatter.h"
 
 
 @implementation SSLunarDateTests
@@ -28,7 +29,10 @@
 -(void) testPrintTodayLunar
 {
     SSLunarDate *lunar = [[SSLunarDate alloc] init];
-    [lunar printLunarDay:[NSDate date]];
+
+    NSLog(@"month:%@ day:%@", [lunar monthString], [lunar dayString]);
+    
 }
+
 
 @end

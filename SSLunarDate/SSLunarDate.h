@@ -8,16 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "SSLunarDateFormatter.h"
 #import "SSLunarDateType.h"
 
 @interface SSLunarDate : NSObject
-{
-    NSCalendar *_calendar;
-}
+- (id) init; // init the solar date by [NSDate date];
+- (id) initWithDate:(NSDate *) solarDate; // init with solarDate
+- (NSString *) monthString;
+- (NSString *) dayString;
+- (NSString *) shengxiaoString;
+- (BOOL)       isLeapMonth;  // return whether the date is a leap month.
 
-- (void) printLunarDay:(NSDate *) solarDate;
-
-- (void) getLunarDateForNSDate:(NSDate *) solarDate forDate:(Date *) lunar;
 
 
 // needs: 1. needs get the lunar date by a lunar date.

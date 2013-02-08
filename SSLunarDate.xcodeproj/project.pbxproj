@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29177BF316C38B2900E66041 /* LunarDateFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29177BF516C38B2900E66041 /* LunarDateFormatter.strings */; };
+		29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
+		29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
 		29AFF70E16C223E80093EAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF70D16C223E80093EAB4 /* Foundation.framework */; };
 		29AFF71316C223E80093EAB4 /* SSLunarDate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AFF71216C223E80093EAB4 /* SSLunarDate.h */; };
 		29AFF71516C223E80093EAB4 /* SSLunarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF71416C223E80093EAB4 /* SSLunarDate.m */; };
 		29AFF71D16C223E80093EAB4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF71C16C223E80093EAB4 /* SenTestingKit.framework */; };
-		29AFF71F16C223E80093EAB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF71E16C223E80093EAB4 /* UIKit.framework */; };
 		29AFF72016C223E80093EAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF70D16C223E80093EAB4 /* Foundation.framework */; };
 		29AFF72316C223E80093EAB4 /* libSSLunarDate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF70A16C223E80093EAB4 /* libSSLunarDate.a */; };
 		29AFF72916C223E80093EAB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29AFF72716C223E80093EAB4 /* InfoPlist.strings */; };
@@ -19,8 +21,6 @@
 		29AFF73716C226C40093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
 		29AFF73A16C227550093EAB4 /* SSLunarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF71416C223E80093EAB4 /* SSLunarDate.m */; };
 		29AFF73B16C227550093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
-		29AFF74016C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */; };
-		29AFF74116C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		29177BEB16C386F400E66041 /* SSLunarDateType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SSLunarDateType.h; path = SSLunarDate/SSLunarDateType.h; sourceTree = "<group>"; };
+		29177BEB16C386F400E66041 /* SSLunarDateType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSLunarDateType.h; sourceTree = "<group>"; };
+		29177BF416C38B2900E66041 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LunarDateFormatter.strings; sourceTree = "<group>"; };
+		29177BF616C38B5B00E66041 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LunarDateFormatter.strings"; sourceTree = "<group>"; };
+		29177BF716C38B5B00E66041 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateFormatter.m; sourceTree = "<group>"; };
 		29AFF70A16C223E80093EAB4 /* libSSLunarDate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSLunarDate.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AFF70D16C223E80093EAB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29AFF71116C223E80093EAB4 /* SSLunarDate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSLunarDate-Prefix.pch"; sourceTree = "<group>"; };
@@ -55,7 +59,6 @@
 		29AFF71416C223E80093EAB4 /* SSLunarDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSLunarDate.m; sourceTree = "<group>"; };
 		29AFF71B16C223E80093EAB4 /* SSLunarDateTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSLunarDateTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29AFF71C16C223E80093EAB4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		29AFF71E16C223E80093EAB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		29AFF72616C223E80093EAB4 /* SSLunarDateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSLunarDateTests-Info.plist"; sourceTree = "<group>"; };
 		29AFF72816C223E80093EAB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29AFF72A16C223E80093EAB4 /* SSLunarDateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSLunarDateTests.h; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		29AFF73616C226C40093EAB4 /* libLunar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libLunar.c; sourceTree = "<group>"; };
 		29AFF73D16C2B33B0093EAB4 /* libLunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libLunar.h; sourceTree = "<group>"; };
 		29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateFormatter.h; sourceTree = "<group>"; };
-		29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AFF71D16C223E80093EAB4 /* SenTestingKit.framework in Frameworks */,
-				29AFF71F16C223E80093EAB4 /* UIKit.framework in Frameworks */,
 				29AFF72016C223E80093EAB4 /* Foundation.framework in Frameworks */,
 				29AFF72316C223E80093EAB4 /* libSSLunarDate.a in Frameworks */,
 			);
@@ -92,7 +93,6 @@
 		29AFF6FF16C223E80093EAB4 = {
 			isa = PBXGroup;
 			children = (
-				29177BEB16C386F400E66041 /* SSLunarDateType.h */,
 				29AFF70F16C223E80093EAB4 /* SSLunarDate */,
 				29AFF72416C223E80093EAB4 /* SSLunarDateTests */,
 				29AFF70C16C223E80093EAB4 /* Frameworks */,
@@ -114,7 +114,6 @@
 			children = (
 				29AFF70D16C223E80093EAB4 /* Foundation.framework */,
 				29AFF71C16C223E80093EAB4 /* SenTestingKit.framework */,
-				29AFF71E16C223E80093EAB4 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,8 +121,9 @@
 		29AFF70F16C223E80093EAB4 /* SSLunarDate */ = {
 			isa = PBXGroup;
 			children = (
+				29177BEB16C386F400E66041 /* SSLunarDateType.h */,
+				29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */,
 				29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */,
-				29AFF73F16C2C2CB0093EAB4 /* SSLunarDateFormatter.m */,
 				29AFF71216C223E80093EAB4 /* SSLunarDate.h */,
 				29AFF71416C223E80093EAB4 /* SSLunarDate.m */,
 				29AFF73D16C2B33B0093EAB4 /* libLunar.h */,
@@ -136,6 +136,7 @@
 		29AFF71016C223E80093EAB4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29177BF516C38B2900E66041 /* LunarDateFormatter.strings */,
 				29AFF71116C223E80093EAB4 /* SSLunarDate-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -214,6 +215,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 29AFF6FF16C223E80093EAB4;
 			productRefGroup = 29AFF70B16C223E80093EAB4 /* Products */;
@@ -232,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AFF72916C223E80093EAB4 /* InfoPlist.strings in Resources */,
+				29177BF316C38B2900E66041 /* LunarDateFormatter.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +263,7 @@
 			files = (
 				29AFF71516C223E80093EAB4 /* SSLunarDate.m in Sources */,
 				29AFF73716C226C40093EAB4 /* libLunar.c in Sources */,
-				29AFF74016C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */,
+				29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +274,7 @@
 				29AFF73A16C227550093EAB4 /* SSLunarDate.m in Sources */,
 				29AFF73B16C227550093EAB4 /* libLunar.c in Sources */,
 				29AFF72C16C223E80093EAB4 /* SSLunarDateTests.m in Sources */,
-				29AFF74116C2C2CB0093EAB4 /* SSLunarDateFormatter.m in Sources */,
+				29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,10 +289,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		29177BF516C38B2900E66041 /* LunarDateFormatter.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29177BF416C38B2900E66041 /* en */,
+				29177BF616C38B5B00E66041 /* zh-Hans */,
+			);
+			name = LunarDateFormatter.strings;
+			sourceTree = "<group>";
+		};
 		29AFF72716C223E80093EAB4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				29AFF72816C223E80093EAB4 /* en */,
+				29177BF716C38B5B00E66041 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

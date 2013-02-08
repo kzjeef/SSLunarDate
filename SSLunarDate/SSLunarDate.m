@@ -9,6 +9,16 @@
 #import "SSLunarDate.h"
 #import "libLunar.h"
 
+@interface SSLunarDate()
+{
+    NSCalendar *_calendar;
+    SSLunarDateFormatter *_formater;
+    LibLunarContext *_ctx;
+    NSDate *_solarDate;
+    Date   _simpleSolarDate;
+}
+@end
+
 @implementation SSLunarDate
 
 
@@ -16,54 +26,74 @@
 {
     self = [super init];
     if (self) {
-        _calendar = [NSCalendar currentCalendar];
+        [self setupAndDoConvert:[NSDate date]];
     }
     
     return self;
 }
 
--(void) printLunarDay:(NSDate *) solarDate
+- (void) dealloc
 {
-    Date mysolar;
-    Date *mylunar;
-    [self NSDataToLunarDate:solarDate withDate:&mysolar];
-    
-    NSLog(@"Solar: year: %d month: %d day: %d", mysolar.year, mysolar.month, mysolar.day);
-    LibLunarContext *ctx = createLunarContext();
-    NSAssert(ctx != NULL, @"create conctext faield");
-    
-    Solar2Lunar(ctx, &mysolar);
-    
-    mylunar = getLunarDate(ctx);
-    
-    NSLog(@"Lunar: year: %d month: %d day: %d", mylunar->year, mylunar->month,
-          mylunar->day);
-
-    freeLunarContext(ctx);
+    // not call [supoer dealloc] since ARC already provide this.
+    freeLunarContext(_ctx);
+    _ctx = NULL;
 }
 
-- (void) getLunarDateForNSDate:(NSDate *) solarDate forDate:(Date *) lunar
+- (id) initWithDate:(NSDate *) solarDate
 {
-    Date mysolar;
-    [self NSDataToLunarDate:solarDate withDate:&mysolar];
-    
-    NSAssert(lunar != NULL, @"pass null to convert lunar");
-    
-    NSLog(@"Solar: year: %d month: %d day: %d", mysolar.year, mysolar.month, mysolar.day);
-    
-    LibLunarContext *ctx = createLunarContext();
-    NSAssert(ctx != NULL, @"create conctext faield");
-    Solar2Lunar(ctx, &mysolar);
-    Date *mylunar = getLunarDate(ctx);
-    memcpy(lunar, mylunar, sizeof(*mylunar));
-
-    freeLunarContext(ctx);
+    self = [super init];
+    if (self) {
+        [self setupAndDoConvert:solarDate];
+    }
+    return self;
 }
 
+- (void) setupAndDoConvert:(NSDate *) solarDate
+{
+    _calendar = [NSCalendar currentCalendar];
+    _formater = [SSLunarDateFormatter sharedLunarDateFormatter];
+    [self NSDataToLunarDate:solarDate withDate:&_simpleSolarDate];
+    
+    NSLog(@"solarDate:%d %d", _simpleSolarDate.month, _simpleSolarDate.day);
+    _calendar = [NSCalendar currentCalendar];
+    _formater = [SSLunarDateFormatter sharedLunarDateFormatter];
+    NSAssert(_ctx == NULL,
+             @"libLunar Context was not null when setup, leak...");
+    _ctx = createLunarContext();
+    NSAssert(_ctx != NULL, @"create context failed");
+    Solar2Lunar(_ctx, &_simpleSolarDate);
+}
+
+- (NSString *) monthString
+{
+    NSAssert(_formater, @"formatter is null!");
+    
+    return [_formater getLunarMonthForDate:_ctx];
+}
+
+- (NSString *) dayString
+{
+    NSAssert(_formater, @"formatter is null");
+    return [_formater getDayNameForDate:_ctx];
+}
+
+- (NSString *) sehgnxiaoString
+{
+    NSAssert(_formater, @"formatter is null");
+    return [_formater getShengXiaoNameForDate:_ctx];
+}
+
+- (BOOL) isLeapMonth
+{
+    NSAssert(_formater, @"formatter is null");
+    return [_formater isLeapMonthForDate:_ctx];
+}
 
 - (void) NSDataToLunarDate:(NSDate *) date withDate:(Date *) lunarDate
 {
-    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit;
+    unsigned int flags = NSYearCalendarUnit             \
+        | NSMonthCalendarUnit | NSDayCalendarUnit       \
+        | NSHourCalendarUnit;
     NSDateComponents *parts = [_calendar components:flags fromDate:date];
     
     lunarDate->year = parts.year;
