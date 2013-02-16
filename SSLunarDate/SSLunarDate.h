@@ -19,7 +19,8 @@
 - (NSString *) dayString;
 - (NSString *) zodiacString;
 - (NSString *) string;
-
+- (NSString *) yearGanzhiString;
+- (NSString *) leapString;
 - (BOOL)       isLeapMonth;  // return whether the date is a leap month.
 
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2912673E16CF842F00FFB202 /* SSLunarDateFormatter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */; };
+		2912673F16CF845900FFB202 /* libLunar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AFF73D16C2B33B0093EAB4 /* libLunar.h */; };
+		2912674016CF846A00FFB202 /* SSLunarDateType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29177BEB16C386F400E66041 /* SSLunarDateType.h */; };
 		29177BF316C38B2900E66041 /* LunarDateFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29177BF516C38B2900E66041 /* LunarDateFormatter.strings */; };
 		29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
 		29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
@@ -40,6 +43,9 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				2912674016CF846A00FFB202 /* SSLunarDateType.h in CopyFiles */,
+				2912673F16CF845900FFB202 /* libLunar.h in CopyFiles */,
+				2912673E16CF842F00FFB202 /* SSLunarDateFormatter.h in CopyFiles */,
 				29AFF71316C223E80093EAB4 /* SSLunarDate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

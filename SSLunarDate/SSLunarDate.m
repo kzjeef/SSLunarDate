@@ -83,6 +83,17 @@
     return [_formater getShengXiaoNameForDate:_ctx];
 }
 
+- (NSString *) leapString
+{
+    return [_formater getLeapString];
+}
+
+- (NSString *) yearGanzhiString
+{
+    NSAssert(_formater, @"formatter is null");
+    return [_formater getGanZhiYearNameForDate:_ctx];
+}
+
 - (NSString *) string
 {
     NSAssert(_formater, @"formatter is null");

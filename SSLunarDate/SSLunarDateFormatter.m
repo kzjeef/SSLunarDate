@@ -9,6 +9,7 @@
 #import "SSLunarDateFormatter.h"
 
 #define YEAR_STR NSLocalizedString(@"年", "year")
+#define LEAP_STR NSLocalizedString(@"闰", "leap")
 
 @interface SSLunarDateFormatter()
 {
@@ -239,6 +240,16 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
             [self zhiArray][lunar->_zhi.year]];
 }
 
+- (NSString *) getGanZhiYearNameForDate:(LibLunarContext *)lunar
+{
+    NSAssert(lunar != NULL, @"lunar not be null");
+
+    return [NSString stringWithFormat:@"%@%@%@",
+                     [self ganArray][lunar->_gan.year],
+                     [self zhiArray][lunar->_zhi.year],
+                     YEAR_STR];
+}
+
 - (NSString *) getShengXiaoNameForDate:(LibLunarContext *)lunar
 {
     NSAssert(lunar != NULL, @"lunar should not null");
@@ -276,6 +287,11 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
 - (NSString *) getLunarHolidayNameForDate: (LibLunarContext *) lunar
 {
     NSAssert(lunar != NULL, @"lunar should not null");
+}
+
+- (NSString *) getLeapString
+{
+    return LEAP_STR;
 }
 
 - (BOOL) isLeapMonthForDate: (LibLunarContext *) lunar
