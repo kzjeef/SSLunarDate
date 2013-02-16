@@ -14,9 +14,12 @@
 @interface SSLunarDate : NSObject
 - (id) init; // init the solar date by [NSDate date];
 - (id) initWithDate:(NSDate *) solarDate; // init with solarDate
+
 - (NSString *) monthString;
 - (NSString *) dayString;
-- (NSString *) shengxiaoString;
+- (NSString *) zodiacString;
+- (NSString *) string;
+
 - (BOOL)       isLeapMonth;  // return whether the date is a leap month.
 
 

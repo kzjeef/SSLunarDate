@@ -32,6 +32,8 @@
 
     NSLog(@"month:%@ day:%@", [lunar monthString], [lunar dayString]);
     
+    NSLog(@"full string:%@ %@", [lunar string], [lunar zodiacString]);
+    
 }
 
 

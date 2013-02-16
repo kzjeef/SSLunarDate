@@ -8,6 +8,8 @@
 
 #import "SSLunarDateFormatter.h"
 
+#define YEAR_STR NSLocalizedString(@"年", "year")
+
 @interface SSLunarDateFormatter()
 {
     NSArray *_monthArray;
@@ -231,19 +233,17 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
 - (NSString *) getGanZhiNameForDate:(LibLunarContext *)lunar
 {
     NSAssert(lunar != NULL, @"lunar not be null");
-
+    
+    return [NSString  stringWithFormat:@"%@%@",
+            [self ganArray][lunar->_gan.year],
+            [self zhiArray][lunar->_zhi.year]];
 }
 
 - (NSString *) getShengXiaoNameForDate:(LibLunarContext *)lunar
 {
-        NSAssert(lunar != NULL, @"lunar should not null");
+    NSAssert(lunar != NULL, @"lunar should not null");
+    return [self zodiacArray][lunar->_zhi.year];
 }
-
-- (NSString *) getYearNameForDate:(LibLunarContext *) lunar
-{
-        NSAssert(lunar != NULL, @"lunar should not null");
-}
-
 
 - (NSString *) getLunarMonthForDate: (LibLunarContext *) lunar
 {
@@ -261,9 +261,14 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
 - (NSString *) getFullLunarStringForDate: (LibLunarContext *) lunar
 {
     NSAssert(lunar != NULL, @"lunar should not null");
+
+    return [NSString stringWithFormat:@"%@%@%@%@", [self getGanZhiNameForDate:lunar],
+    YEAR_STR, [self getLunarMonthForDate:lunar],
+     [self getDayNameForDate:lunar] ];
+    
 }
 
-- (BOOL)       isDateLunarHoliday:(LibLunarContext *) lunar
+- (BOOL) isDateLunarHoliday:(LibLunarContext *) lunar
 {
     NSAssert(lunar != NULL, @"lunar should not null");
 }
@@ -273,7 +278,7 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
     NSAssert(lunar != NULL, @"lunar should not null");
 }
 
-- (BOOL)       isLeapMonthForDate: (LibLunarContext *) lunar
+- (BOOL) isLeapMonthForDate: (LibLunarContext *) lunar
 {
         NSAssert(lunar != NULL, @"lunar should not null");
         return lunar->_lunar.leap == 1;

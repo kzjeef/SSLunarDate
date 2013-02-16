@@ -77,10 +77,16 @@
     return [_formater getDayNameForDate:_ctx];
 }
 
-- (NSString *) sehgnxiaoString
+- (NSString *) zodiacString
 {
     NSAssert(_formater, @"formatter is null");
     return [_formater getShengXiaoNameForDate:_ctx];
+}
+
+- (NSString *) string
+{
+    NSAssert(_formater, @"formatter is null");
+    return [_formater getFullLunarStringForDate:_ctx];
 }
 
 - (BOOL) isLeapMonth

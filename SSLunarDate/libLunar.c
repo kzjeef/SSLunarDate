@@ -71,6 +71,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <assert.h>
 #include "libLunar.h"
 
 static SSLunarSimpleDate SolarFirstDate = {
@@ -651,8 +652,9 @@ void CalGZ(long offset, SSLunarSimpleDate *d, SSLunarSimpleDate *g, SSLunarSimpl
 void Error(s)
 char	*s;
 {
-    printf("%s\n",s);
-    exit(1);
+    printf("libLunar:%s\n",s);
+    assert(-1);
+    //    exit(1);
 }
 
 
