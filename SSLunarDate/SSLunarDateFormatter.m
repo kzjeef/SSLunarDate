@@ -260,7 +260,13 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
 {
     NSAssert(lunar != NULL, @"lunar should not null");
 
-    return [self monthArray][lunar->_lunar.month - 1];
+    NSString *monthStr = [self monthArray][lunar->_lunar.month - 1];
+    if ([self isLeapMonthForDate:lunar]) {
+        return [NSString stringWithFormat:@"%@%@",
+                         LEAP_STR,
+                         monthStr];
+    } else 
+        return monthStr;
 }
 
 - (NSString *) getDayNameForDate: (LibLunarContext *) lunar
