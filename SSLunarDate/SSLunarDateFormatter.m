@@ -288,11 +288,14 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
 - (BOOL) isDateLunarHoliday:(LibLunarContext *) lunar
 {
     NSAssert(lunar != NULL, @"lunar should not null");
+    // TODO
+    return NO;
 }
 
 - (NSString *) getLunarHolidayNameForDate: (LibLunarContext *) lunar
 {
     NSAssert(lunar != NULL, @"lunar should not null");
+    return nil;
 }
 
 - (NSString *) getLeapString

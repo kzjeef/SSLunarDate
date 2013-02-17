@@ -18,8 +18,6 @@
 
 - (NSString *) getShengXiaoNameForDate:(LibLunarContext *)lunar;
 
-- (NSString *) getGanZhiNameForDate:(LibLunarContext *) lunar;
-
 - (NSString *) getGanZhiYearNameForDate:(LibLunarContext *)lunar;
 
 - (NSString *) getLunarMonthForDate: (LibLunarContext *) lunar;

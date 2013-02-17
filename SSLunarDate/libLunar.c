@@ -512,9 +512,8 @@ long Solar2Day1(SSLunarSimpleDate *d)
 long Lunar2Day(LibLunarContext *ctx, SSLunarSimpleDate *d)
 {
     long offset = 0;
-    int year, i, m, nYear, leapMonth;
+    int year, i, m, leapMonth;
     
-    nYear = make_yday(ctx);
     year = d->year - LunarFirstDate.year;
     for (i=0; i<year; i++)
         offset += ctx->_yday[i];
