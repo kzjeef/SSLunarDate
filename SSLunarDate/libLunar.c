@@ -74,6 +74,9 @@
 #include <assert.h>
 #include "libLunar.h"
 
+#define VALID_MIN_YEAR 1900
+#define VALID_MAX_YEAR 2049
+
 static SSLunarSimpleDate SolarFirstDate = {
     /* Wednesday, 12 a.m., 31 January, 1900 */
     1900, 1, 31, 0, 3, 0
@@ -416,6 +419,14 @@ SSLunarSimpleDate *getLunarDate(LibLunarContext *ctx)
     return NULL;
 }
 
+int libLunarCheckYearRange(int year)
+{
+    if (year >= VALID_MIN_YEAR && year <= VALID_MAX_YEAR)
+        return 1;
+    else
+        return 0;
+}
+
 void Solar2Lunar(struct LibLunarContext *ctx,
                  SSLunarSimpleDate *solar)
 {
@@ -426,8 +437,12 @@ void Solar2Lunar(struct LibLunarContext *ctx,
         fprintf(stderr, "Soloar2Lunar: ctx pointer cannot be NULL");
         return;
     }
-        
-    
+
+    if (!libLunarCheckYearRange(solar->year)) {
+            fprintf(stderr, "Solar2Lunar: the year provide exceeds lib's ablility.");
+            return;
+    }
+            
     
     offset = Solar2Day(solar);
     solar->weekday = (offset + SolarFirstDate.weekday) % 7;

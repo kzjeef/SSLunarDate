@@ -12,7 +12,7 @@
 #include "SSLunarDateType.h"
 
 
-
+int libLunarCheckYearRange(int year);
 void Lunar2Solar(struct LibLunarContext *ctx, SSLunarSimpleDate *lunar);
 void Solar2Lunar(struct LibLunarContext *ctx, SSLunarSimpleDate *solar);
 SSLunarSimpleDate *getLunarDate(LibLunarContext *ctx);

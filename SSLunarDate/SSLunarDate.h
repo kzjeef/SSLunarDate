@@ -14,6 +14,7 @@
 @interface SSLunarDate : NSObject
 - (id) init; // init the solar date by [NSDate date];
 - (id) initWithDate:(NSDate *) solarDate; // init with solarDate
+- (BOOL) convertSuccess;
 
 - (NSString *) monthString;
 - (NSString *) dayString;

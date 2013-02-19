@@ -16,6 +16,7 @@
     LibLunarContext *_ctx;
     NSDate *_solarDate;
     SSLunarSimpleDate   _simpleSolarDate;
+    BOOL dateOutOfRange;
 }
 @end
 
@@ -54,7 +55,11 @@
     _formater = [SSLunarDateFormatter sharedLunarDateFormatter];
     [self NSDataToLunarDate:solarDate withDate:&_simpleSolarDate];
     
-    NSLog(@"solarDate:%d %d", _simpleSolarDate.month, _simpleSolarDate.day);
+    //    NSLog(@"solarDate:%d %d", _simpleSolarDate.month, _simpleSolarDate.day);
+    
+    if (libLunarCheckYearRange(_simpleSolarDate.year) == false) {
+        dateOutOfRange = TRUE;
+    }
     _calendar = [NSCalendar currentCalendar];
     _formater = [SSLunarDateFormatter sharedLunarDateFormatter];
     NSAssert(_ctx == NULL,
@@ -64,45 +69,59 @@
     Solar2Lunar(_ctx, &_simpleSolarDate);
 }
 
+#define RETURN_EMPTY_IF_DATE_OUT_OF_RANGE do { if (dateOutOfRange) return @""; } while (0)
+#define RETURN_NO_IF_DATE_OUT_OF_RANGE do { if (dateOutOfRange) return FALSE; } while (0)
+
+- (BOOL) convertSuccess
+{
+    return !dateOutOfRange;
+}
+
 - (NSString *) monthString
 {
     NSAssert(_formater, @"formatter is null!");
-    
+    RETURN_EMPTY_IF_DATE_OUT_OF_RANGE;
     return [_formater getLunarMonthForDate:_ctx];
 }
 
 - (NSString *) dayString
 {
     NSAssert(_formater, @"formatter is null");
+    RETURN_EMPTY_IF_DATE_OUT_OF_RANGE;
     return [_formater getDayNameForDate:_ctx];
 }
 
 - (NSString *) zodiacString
 {
     NSAssert(_formater, @"formatter is null");
+    RETURN_EMPTY_IF_DATE_OUT_OF_RANGE;
     return [_formater getShengXiaoNameForDate:_ctx];
 }
 
 - (NSString *) leapString
 {
+    RETURN_EMPTY_IF_DATE_OUT_OF_RANGE;
     return [_formater getLeapString];
 }
 
 - (NSString *) yearGanzhiString
 {
     NSAssert(_formater, @"formatter is null");
+    RETURN_EMPTY_IF_DATE_OUT_OF_RANGE;
     return [_formater getGanZhiYearNameForDate:_ctx];
 }
 
 - (NSString *) string
 {
     NSAssert(_formater, @"formatter is null");
+    RETURN_EMPTY_IF_DATE_OUT_OF_RANGE;
     return [_formater getFullLunarStringForDate:_ctx];
 }
 
 - (BOOL) isLeapMonth
 {
     NSAssert(_formater, @"formatter is null");
+    RETURN_NO_IF_DATE_OUT_OF_RANGE;
     return [_formater isLeapMonthForDate:_ctx];
 }
 
