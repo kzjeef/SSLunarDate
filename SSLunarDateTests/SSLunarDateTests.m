@@ -9,6 +9,7 @@
 #import "SSLunarDateTests.h"
 #import "SSLunarDate.h"
 #import "SSLunarDateFormatter.h"
+#import "SSLunarDateHoliday.h"
 
 
 @implementation SSLunarDateTests
@@ -36,5 +37,24 @@
     
 }
 
+- (void) testQingming
+{
+    SSLunarDateHoliday *holiday = [SSLunarDateHoliday sharedSSLunarDateHoliday];
+    
+    NSLog(@"2013 qingming: %@", [holiday getQingmingDate:2013]);
+    
+    STAssertTrue([@"0405" isEqualToString:[holiday getQingmingDate:2010]] , @"qingming calc not good");
+    STAssertTrue([@"0405" isEqualToString:[holiday getQingmingDate:2011]] , @"qingming calc not good");
+    STAssertTrue([@"0404" isEqualToString:[holiday getQingmingDate:2013]] , @"qingming calc not good");
+    STAssertTrue([@"0404" isEqualToString:[holiday getQingmingDate:2013]] , @"qingming calc not good");
+}
+
+- (void) testDongzhi
+{
+    SSLunarDateHoliday *holiday = [SSLunarDateHoliday sharedSSLunarDateHoliday];
+    
+    STAssertTrue([@"1221" isEqualToString:[holiday getDongzhiDate:2012]], @"dongzhi calc not good");
+    STAssertTrue([@"1222" isEqualToString:[holiday getDongzhiDate:2013]], @"dongzhi calc not good");
+}
 
 @end

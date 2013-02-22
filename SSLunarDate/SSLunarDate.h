@@ -10,19 +10,41 @@
 
 #import "SSLunarDateFormatter.h"
 #import "SSLunarDateType.h"
+#import "SSHolidayManager.h"
 
 @interface SSLunarDate : NSObject
-- (id) init; // init the solar date by [NSDate date];
-- (id) initWithDate:(NSDate *) solarDate; // init with solarDate
+
+// init the solar date by [NSDate date];
+- (id) init;
+
+// init with solarDate
+- (id) initWithDate:(NSDate *) solarDate;
+
+// This with date and calendar.
+// The calendar is because the calendar generate function is very heavy,
+// so better can use a parameter to have the calendar.
+- (id) initWithDate:(NSDate *)solarDate calendar:(NSCalendar *)calendar;
+
+// Check whether the solar to lunar success or not, since the lunar convert
+// have some range, the out ranged date will lead to empty string for the
+// string functions.
 - (BOOL) convertSuccess;
+
 
 - (NSString *) monthString;
 - (NSString *) dayString;
 - (NSString *) zodiacString;
 - (NSString *) string;
 - (NSString *) yearGanzhiString;
-- (NSString *) leapString;
+
 - (BOOL)       isLeapMonth;  // return whether the date is a leap month.
+- (NSString *) leapString;
+
+
+- (BOOL)       isLunarHolidayWithRegion:(SSHolidayRegion) region;
+- (NSString *) getLunarHolidayNameWithRegion:(SSHolidayRegion) region;
+
+
 
 
 

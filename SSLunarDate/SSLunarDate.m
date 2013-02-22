@@ -8,15 +8,16 @@
 
 #import "SSLunarDate.h"
 #import "libLunar.h"
+#import "SSLunarDateHoliday.h"
 
 @interface SSLunarDate()
 {
-    NSCalendar *_calendar;
-    SSLunarDateFormatter *_formater;
-    LibLunarContext *_ctx;
-    NSDate *_solarDate;
-    SSLunarSimpleDate   _simpleSolarDate;
-    BOOL dateOutOfRange;
+    BOOL                    dateOutOfRange;
+    NSCalendar              *_calendar;
+    NSDate                  *_solarDate;
+    SSLunarDateFormatter    *_formater;
+    LibLunarContext         *_ctx;
+    SSLunarSimpleDate       _simpleSolarDate;
 }
 @end
 
@@ -27,7 +28,8 @@
 {
     self = [super init];
     if (self) {
-        [self setupAndDoConvert:[NSDate date]];
+        [self setupAndDoConvert:[NSDate date]
+                       calendar:[NSCalendar currentCalendar]];
     }
     
     return self;
@@ -44,14 +46,25 @@
 {
     self = [super init];
     if (self) {
-        [self setupAndDoConvert:solarDate];
+        [self setupAndDoConvert:solarDate
+                       calendar:[NSCalendar currentCalendar]];
     }
     return self;
 }
 
-- (void) setupAndDoConvert:(NSDate *) solarDate
+- (id) initWithDate:(NSDate *)solarDate calendar:(NSCalendar *)calendar
 {
-    _calendar = [NSCalendar currentCalendar];
+    self = [super init];
+    if (self) {
+        [self setupAndDoConvert:solarDate calendar:calendar];
+    }
+    
+    return self;
+}
+
+- (void) setupAndDoConvert:(NSDate *) solarDate calendar:(NSCalendar *) cal
+{
+    _calendar = cal;
     _formater = [SSLunarDateFormatter sharedLunarDateFormatter];
     [self NSDataToLunarDate:solarDate withDate:&_simpleSolarDate];
     
@@ -60,8 +73,7 @@
     if (libLunarCheckYearRange(_simpleSolarDate.year) == false) {
         dateOutOfRange = TRUE;
     }
-    _calendar = [NSCalendar currentCalendar];
-    _formater = [SSLunarDateFormatter sharedLunarDateFormatter];
+
     NSAssert(_ctx == NULL,
              @"libLunar Context was not null when setup, leak...");
     _ctx = createLunarContext();
@@ -138,6 +150,17 @@
     lunarDate->hour = parts.hour;
 }
 
+- (BOOL) isLunarHolidayWithRegion:(SSHolidayRegion) region
+{
+    SSLunarDateHoliday *holiday = [SSLunarDateHoliday sharedSSLunarDateHoliday];
+    
+    return [holiday isDateLunarHoliday:_ctx region:region];
+}
 
+- (NSString *) getLunarHolidayNameWithRegion:(SSHolidayRegion) region
+{
+    SSLunarDateHoliday *holiday = [SSLunarDateHoliday sharedSSLunarDateHoliday];
+    return [holiday getLunarHolidayNameForDate:_ctx region:region];
+}
 
 @end

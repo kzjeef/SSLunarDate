@@ -19,8 +19,6 @@
     NSArray *_zhiArray;
     NSArray *_zodiacArray;
     NSArray *_solarTerm;
-    NSDictionary *_solarHoliday; // chinese only.
-    NSDictionary *_lunarHoliday;
 }
 @end
 
@@ -194,42 +192,8 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
     return _solarTerm;
 }
 
-- (NSDictionary *) solarHoliday
-{
-    if (!_solarHoliday)
-        _solarHoliday = @{@"0101":NSLocalizedString(@"元旦",""),
-        @"0214":NSLocalizedString(@"情人节",""),
-    @"0308":NSLocalizedString(@"妇女节",""),
-    @"0312":NSLocalizedString(@"植树节",""),
-    @"0401":NSLocalizedString(@"愚人节",""),
-    @"0501":NSLocalizedString(@"劳动节",""),
-    @"0504":NSLocalizedString(@"青年节",""),
-    @"0601":NSLocalizedString(@"儿童节",""),
-    @"0701":NSLocalizedString(@"建党节",""),
-    @"0801":NSLocalizedString(@"建军节",""),
-    @"0910":NSLocalizedString(@"教师节",""),
-    @"1001":NSLocalizedString(@"国庆节",""),
-    @"1225":NSLocalizedString(@"圣诞节","")
-        };
 
-    return _solarHoliday;
-}
 
-- (NSDictionary *) lunarHoliday
-{
-    if (!_lunarHoliday)
-        _lunarHoliday = @{ @"0101":NSLocalizedString(@"春节",""),
-          @"0115":NSLocalizedString(@"元宵",""),
-          /* TODO deal with "清明","") */
-          @"0505":NSLocalizedString(@"端午",""),
-          @"0707":NSLocalizedString(@"七夕",""),
-          @"0815":NSLocalizedString(@"中秋",""),
-          @"0909":NSLocalizedString(@"重阳",""),
-          @"1208":NSLocalizedString(@"腊八","")
-        };
-
-    return _lunarHoliday;
-}
 
 - (NSString *) getGanZhiNameForDate:(LibLunarContext *)lunar
 {
@@ -283,19 +247,6 @@ static SSLunarDateFormatter  *_sharedFormatter = NULL;
     YEAR_STR, [self getLunarMonthForDate:lunar],
      [self getDayNameForDate:lunar] ];
     
-}
-
-- (BOOL) isDateLunarHoliday:(LibLunarContext *) lunar
-{
-    NSAssert(lunar != NULL, @"lunar should not null");
-    // TODO
-    return NO;
-}
-
-- (NSString *) getLunarHolidayNameForDate: (LibLunarContext *) lunar
-{
-    NSAssert(lunar != NULL, @"lunar should not null");
-    return nil;
 }
 
 - (NSString *) getLeapString

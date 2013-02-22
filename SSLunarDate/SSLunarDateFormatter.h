@@ -26,15 +26,8 @@
 
 - (NSString *) getFullLunarStringForDate: (LibLunarContext *) lunar;
 
-- (BOOL)       isDateLunarHoliday:(LibLunarContext *) lunar;
-
-- (NSString *) getLunarHolidayNameForDate: (LibLunarContext *) lunar;
-
 - (BOOL)       isLeapMonthForDate: (LibLunarContext *) lunar;
 
 - (NSString *) getLeapString;
-
-
-
 
 @end
