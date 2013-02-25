@@ -14,8 +14,11 @@ typedef enum {
     SSHolidayRegionMocao,
     SSHolidayRegionTaiwan,
     SSHolidayRegionUS,
-    SSholidayRegionCanadia,
+    SSHolidayRegionCanadia,
+    SSHolidayRegionUK,
 } SSHolidayRegion;
+
+#define HOLIDAY_REGION_CHANGED_NOTICE @"SSHolidayRegionChanged"
 
 
 // This class manage the solar holiday of selected region.
