@@ -68,6 +68,8 @@
 		29177BF616C38B5B00E66041 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LunarDateFormatter.strings"; sourceTree = "<group>"; };
 		29177BF716C38B5B00E66041 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateFormatter.m; sourceTree = "<group>"; };
+		292EE30416EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LunarDateFormatter.strings"; sourceTree = "<group>"; };
+		292EE30516EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		29AD3C7016D4F8DF002E6543 /* SSHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayManager.h; sourceTree = "<group>"; };
 		29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayManager.m; sourceTree = "<group>"; };
 		29AD3C7416D4F9DB002E6543 /* SSLunarDateHoliday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateHoliday.h; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 29AFF6FF16C223E80093EAB4;
 			productRefGroup = 29AFF70B16C223E80093EAB4 /* Products */;
@@ -334,6 +337,7 @@
 			children = (
 				29177BF416C38B2900E66041 /* en */,
 				29177BF616C38B5B00E66041 /* zh-Hans */,
+				292EE30416EA0DF600A007DC /* zh-Hant */,
 			);
 			name = LunarDateFormatter.strings;
 			sourceTree = "<group>";
@@ -343,6 +347,7 @@
 			children = (
 				29AFF72816C223E80093EAB4 /* en */,
 				29177BF716C38B5B00E66041 /* zh-Hans */,
+				292EE30516EA0DF600A007DC /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
