@@ -10,7 +10,6 @@
 		2912673E16CF842F00FFB202 /* SSLunarDateFormatter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */; };
 		2912673F16CF845900FFB202 /* libLunar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AFF73D16C2B33B0093EAB4 /* libLunar.h */; };
 		2912674016CF846A00FFB202 /* SSLunarDateType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29177BEB16C386F400E66041 /* SSLunarDateType.h */; };
-		29177BF316C38B2900E66041 /* LunarDateFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29177BF516C38B2900E66041 /* LunarDateFormatter.strings */; };
 		29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
 		29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
 		29AD3C7216D4F8DF002E6543 /* SSHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */; };
@@ -32,7 +31,21 @@
 		29AFF73716C226C40093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
 		29AFF73A16C227550093EAB4 /* SSLunarDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF71416C223E80093EAB4 /* SSLunarDate.m */; };
 		29AFF73B16C227550093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
+		29D5CF5116EA2D360095319A /* LunarDateFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29177BF516C38B2900E66041 /* LunarDateFormatter.strings */; };
+		29D5CF5316EA2D700095319A /* SSLunarDateTests-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF72616C223E80093EAB4 /* SSLunarDateTests-Info.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		29D5CF5216EA2D550095319A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist.strings;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyStrings\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		29AFF72116C223E80093EAB4 /* PBXContainerItemProxy */ = {
@@ -56,6 +69,15 @@
 				2912673F16CF845900FFB202 /* libLunar.h in CopyFiles */,
 				2912673E16CF842F00FFB202 /* SSLunarDateFormatter.h in CopyFiles */,
 				29AFF71316C223E80093EAB4 /* SSLunarDate.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29D5CF5416EA2D850095319A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +228,11 @@
 				29AFF70616C223E80093EAB4 /* Sources */,
 				29AFF70716C223E80093EAB4 /* Frameworks */,
 				29AFF70816C223E80093EAB4 /* CopyFiles */,
+				29D5CF5416EA2D850095319A /* CopyFiles */,
+				29D5CF5516EA2D8A0095319A /* ShellScript */,
 			);
 			buildRules = (
+				29D5CF5216EA2D550095319A /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -270,7 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29AFF72916C223E80093EAB4 /* InfoPlist.strings in Resources */,
-				29177BF316C38B2900E66041 /* LunarDateFormatter.strings in Resources */,
+				29D5CF5116EA2D360095319A /* LunarDateFormatter.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +315,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		29D5CF5516EA2D8A0095319A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -297,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D5CF5316EA2D700095319A /* SSLunarDateTests-Info.plist in Sources */,
 				29AFF71516C223E80093EAB4 /* SSLunarDate.m in Sources */,
 				29AFF73716C226C40093EAB4 /* libLunar.c in Sources */,
 				29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */,
