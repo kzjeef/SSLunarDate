@@ -55,19 +55,19 @@ static SSLunarDateHoliday *_sslunarholiday = NULL;
     return nil;
 }
 
-#define QINGMING_STR NSLocalizedString(@"清明","")
+#define QINGMING_STR NSLocalizedString(@"清明节","")
 
 - (NSDictionary *) lunarHolidayChina
 {
     if (!_lunarHoliday)
         _lunarHoliday = @{
                           @"0101":NSLocalizedString(@"春节",""),
-                          @"0115":NSLocalizedString(@"元宵",""),
+                          @"0115":NSLocalizedString(@"元宵节",""),
                           // Qing ming
-                          @"0505":NSLocalizedString(@"端午",""),
+                          @"0505":NSLocalizedString(@"端午节",""),
                           @"0707":NSLocalizedString(@"七夕",""),
-                          @"0815":NSLocalizedString(@"中秋",""),
-                          @"0909":NSLocalizedString(@"重阳",""),
+                          @"0815":NSLocalizedString(@"中秋节",""),
+                          @"0909":NSLocalizedString(@"重阳节",""),
                           // dong zhi
                           @"1208":NSLocalizedString(@"腊八",""),
                           @"1229":NSLocalizedString(@"除夕","")

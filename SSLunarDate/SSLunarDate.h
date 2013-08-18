@@ -43,8 +43,6 @@
 // have some range, the out ranged date will lead to empty string for the
 // string functions.
 - (BOOL) convertSuccess;
-
-
 - (NSString *) monthString;
 - (NSString *) dayString;
 - (NSString *) zodiacString;
@@ -57,10 +55,6 @@
 
 - (BOOL)       isLunarHolidayWithRegion:(SSHolidayRegion) region;
 - (NSString *) getLunarHolidayNameWithRegion:(SSHolidayRegion) region;
-
-
-
-
 
 // needs: 1. needs get the lunar date by a lunar date.
 //        2. can get the string of date, to show on the calendar.

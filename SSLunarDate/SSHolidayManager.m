@@ -67,9 +67,8 @@
         if ([lunarDate isLunarHolidayWithRegion:_region])
             [result addObject:[lunarDate getLunarHolidayNameWithRegion:_region]];
     }
-    
-    
-     NSArray *a = [_table getHolidayListWithDate:date];
+
+    NSArray *a = [_table getHolidayListWithDate:date];
     if ([a lastObject] != nil)
         [result addObjectsFromArray:a];
     
