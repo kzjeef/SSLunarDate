@@ -12,6 +12,8 @@
 		2912674016CF846A00FFB202 /* SSLunarDateType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29177BEB16C386F400E66041 /* SSLunarDateType.h */; };
 		29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
 		29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
+		29468AB017C27464001B14D1 /* SSHolidayWest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29468AAE17C27463001B14D1 /* SSHolidayWest.m */; };
+		29468AB317C28338001B14D1 /* SSHolidayWest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29468AAE17C27463001B14D1 /* SSHolidayWest.m */; };
 		29AD3C7216D4F8DF002E6543 /* SSHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */; };
 		29AD3C7316D4F8DF002E6543 /* SSHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */; };
 		29AD3C7616D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7516D4F9DB002E6543 /* SSLunarDateHoliday.m */; };
@@ -33,6 +35,7 @@
 		29AFF73B16C227550093EAB4 /* libLunar.c in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF73616C226C40093EAB4 /* libLunar.c */; };
 		29D5CF5116EA2D360095319A /* LunarDateFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29177BF516C38B2900E66041 /* LunarDateFormatter.strings */; };
 		29D5CF5316EA2D700095319A /* SSLunarDateTests-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF72616C223E80093EAB4 /* SSLunarDateTests-Info.plist */; };
+		29F0073717C290E200C867E7 /* SSHolidayWestTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0073617C290E200C867E7 /* SSHolidayWestTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -92,6 +95,9 @@
 		29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateFormatter.m; sourceTree = "<group>"; };
 		292EE30416EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LunarDateFormatter.strings"; sourceTree = "<group>"; };
 		292EE30516EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		29468AAE17C27463001B14D1 /* SSHolidayWest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayWest.m; sourceTree = "<group>"; };
+		29468AAF17C27464001B14D1 /* SSHolidayWest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayWest.h; sourceTree = "<group>"; };
+		29468AB417C2836B001B14D1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		29AD3C7016D4F8DF002E6543 /* SSHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayManager.h; sourceTree = "<group>"; };
 		29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayManager.m; sourceTree = "<group>"; };
 		29AD3C7416D4F9DB002E6543 /* SSLunarDateHoliday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateHoliday.h; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		29AFF73616C226C40093EAB4 /* libLunar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libLunar.c; sourceTree = "<group>"; };
 		29AFF73D16C2B33B0093EAB4 /* libLunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libLunar.h; sourceTree = "<group>"; };
 		29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateFormatter.h; sourceTree = "<group>"; };
+		29F0073617C290E200C867E7 /* SSHolidayWestTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayWestTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +167,7 @@
 		29AFF70C16C223E80093EAB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29468AB417C2836B001B14D1 /* XCTest.framework */,
 				29AFF70D16C223E80093EAB4 /* Foundation.framework */,
 				29AFF71C16C223E80093EAB4 /* SenTestingKit.framework */,
 				291266F716CF661200FFB202 /* UIKit.framework */,
@@ -170,6 +178,8 @@
 		29AFF70F16C223E80093EAB4 /* SSLunarDate */ = {
 			isa = PBXGroup;
 			children = (
+				29468AAE17C27463001B14D1 /* SSHolidayWest.m */,
+				29468AAF17C27464001B14D1 /* SSHolidayWest.h */,
 				29177BEB16C386F400E66041 /* SSLunarDateType.h */,
 				29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */,
 				29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */,
@@ -201,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				29AFF72A16C223E80093EAB4 /* SSLunarDateTests.h */,
+				29F0073617C290E200C867E7 /* SSHolidayWestTestCase.m */,
 				29AFF72B16C223E80093EAB4 /* SSLunarDateTests.m */,
 				29AD3C8416D62354002E6543 /* SSHolidayTests.h */,
 				29AD3C8516D62354002E6543 /* SSHolidayTests.m */,
@@ -340,6 +351,7 @@
 				29AFF73716C226C40093EAB4 /* libLunar.c in Sources */,
 				29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */,
 				29AD3C7216D4F8DF002E6543 /* SSHolidayManager.m in Sources */,
+				29468AB017C27464001B14D1 /* SSHolidayWest.m in Sources */,
 				29AD3C7616D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */,
 				29AD3C7F16D6101E002E6543 /* SSHolidayTable.m in Sources */,
 			);
@@ -349,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29468AB317C28338001B14D1 /* SSHolidayWest.m in Sources */,
 				29AFF73A16C227550093EAB4 /* SSLunarDate.m in Sources */,
 				29AFF73B16C227550093EAB4 /* libLunar.c in Sources */,
 				29AFF72C16C223E80093EAB4 /* SSLunarDateTests.m in Sources */,
@@ -357,6 +370,7 @@
 				29AD3C7716D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */,
 				29AD3C8016D6101E002E6543 /* SSHolidayTable.m in Sources */,
 				29AD3C8616D62354002E6543 /* SSHolidayTests.m in Sources */,
+				29F0073717C290E200C867E7 /* SSHolidayWestTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,13 +485,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SSLunarDate/SSLunarDate-Prefix.pch";
 				INFOPLIST_FILE = "SSLunarDateTests/SSLunarDateTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"TEST_HOST[sdk=iphonesimulator*]" = "";
+				"TEST_RIG[sdk=*]" = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -486,13 +502,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SSLunarDate/SSLunarDate-Prefix.pch";
 				INFOPLIST_FILE = "SSLunarDateTests/SSLunarDateTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"TEST_HOST[sdk=iphonesimulator*]" = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

@@ -62,7 +62,9 @@
     return _solarHolidayCN;
 }
 
-// TODO: 耶稣受难日..
+// TODO: 耶稣受难日.. Good Firday, 
+// TODO: Good Firday + 1 
+// TODO: Easter
 - (NSDictionary *) solarHolidayHK
 {
     if (!_solarHolidayHK)
