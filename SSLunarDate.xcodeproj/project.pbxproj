@@ -12,6 +12,10 @@
 		2912674016CF846A00FFB202 /* SSLunarDateType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29177BEB16C386F400E66041 /* SSLunarDateType.h */; };
 		29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
 		29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */; };
+		291859F617C9E10F004B4B63 /* SSHolidayTW.m in Sources */ = {isa = PBXBuildFile; fileRef = 291859F517C9E10F004B4B63 /* SSHolidayTW.m */; };
+		291859F917CA0523004B4B63 /* SSHolidayCA.m in Sources */ = {isa = PBXBuildFile; fileRef = 291859F817CA0523004B4B63 /* SSHolidayCA.m */; };
+		291859FD17CA07B4004B4B63 /* SSHolidayHK.m in Sources */ = {isa = PBXBuildFile; fileRef = 291859FC17CA07B4004B4B63 /* SSHolidayHK.m */; };
+		29185A0017CA07C5004B4B63 /* SSHolidayUK.m in Sources */ = {isa = PBXBuildFile; fileRef = 291859FF17CA07C5004B4B63 /* SSHolidayUK.m */; };
 		29468AB017C27464001B14D1 /* SSHolidayWest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29468AAE17C27463001B14D1 /* SSHolidayWest.m */; };
 		29468AB317C28338001B14D1 /* SSHolidayWest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29468AAE17C27463001B14D1 /* SSHolidayWest.m */; };
 		29AD3C7216D4F8DF002E6543 /* SSHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */; };
@@ -19,8 +23,6 @@
 		29AD3C7616D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7516D4F9DB002E6543 /* SSLunarDateHoliday.m */; };
 		29AD3C7716D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7516D4F9DB002E6543 /* SSLunarDateHoliday.m */; };
 		29AD3C7816D600AA002E6543 /* SSHolidayManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AD3C7016D4F8DF002E6543 /* SSHolidayManager.h */; };
-		29AD3C7F16D6101E002E6543 /* SSHolidayTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7E16D6101E002E6543 /* SSHolidayTable.m */; };
-		29AD3C8016D6101E002E6543 /* SSHolidayTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C7E16D6101E002E6543 /* SSHolidayTable.m */; };
 		29AD3C8616D62354002E6543 /* SSHolidayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3C8516D62354002E6543 /* SSHolidayTests.m */; };
 		29AFF70E16C223E80093EAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29AFF70D16C223E80093EAB4 /* Foundation.framework */; };
 		29AFF71316C223E80093EAB4 /* SSLunarDate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 29AFF71216C223E80093EAB4 /* SSLunarDate.h */; };
@@ -36,6 +38,9 @@
 		29D5CF5116EA2D360095319A /* LunarDateFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29177BF516C38B2900E66041 /* LunarDateFormatter.strings */; };
 		29D5CF5316EA2D700095319A /* SSLunarDateTests-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 29AFF72616C223E80093EAB4 /* SSLunarDateTests-Info.plist */; };
 		29F0073717C290E200C867E7 /* SSHolidayWestTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0073617C290E200C867E7 /* SSHolidayWestTestCase.m */; };
+		29F0073A17C9B00F00C867E7 /* SSHolidayCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0073917C9B00F00C867E7 /* SSHolidayCountry.m */; };
+		29F0073D17C9B30E00C867E7 /* SSHolidayChina.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0073C17C9B30E00C867E7 /* SSHolidayChina.m */; };
+		29F0074417C9BCEB00C867E7 /* SSHolidayUS.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F0074317C9BCEB00C867E7 /* SSHolidayUS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -93,6 +98,14 @@
 		29177BF616C38B5B00E66041 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LunarDateFormatter.strings"; sourceTree = "<group>"; };
 		29177BF716C38B5B00E66041 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateFormatter.m; sourceTree = "<group>"; };
+		291859F417C9E10F004B4B63 /* SSHolidayTW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayTW.h; sourceTree = "<group>"; };
+		291859F517C9E10F004B4B63 /* SSHolidayTW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayTW.m; sourceTree = "<group>"; };
+		291859F717CA0523004B4B63 /* SSHolidayCA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayCA.h; sourceTree = "<group>"; };
+		291859F817CA0523004B4B63 /* SSHolidayCA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayCA.m; sourceTree = "<group>"; };
+		291859FB17CA07B4004B4B63 /* SSHolidayHK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayHK.h; sourceTree = "<group>"; };
+		291859FC17CA07B4004B4B63 /* SSHolidayHK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayHK.m; sourceTree = "<group>"; };
+		291859FE17CA07C5004B4B63 /* SSHolidayUK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayUK.h; sourceTree = "<group>"; };
+		291859FF17CA07C5004B4B63 /* SSHolidayUK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayUK.m; sourceTree = "<group>"; };
 		292EE30416EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LunarDateFormatter.strings"; sourceTree = "<group>"; };
 		292EE30516EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		29468AAE17C27463001B14D1 /* SSHolidayWest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayWest.m; sourceTree = "<group>"; };
@@ -102,8 +115,6 @@
 		29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayManager.m; sourceTree = "<group>"; };
 		29AD3C7416D4F9DB002E6543 /* SSLunarDateHoliday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateHoliday.h; sourceTree = "<group>"; };
 		29AD3C7516D4F9DB002E6543 /* SSLunarDateHoliday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLunarDateHoliday.m; sourceTree = "<group>"; };
-		29AD3C7D16D6101E002E6543 /* SSHolidayTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayTable.h; sourceTree = "<group>"; };
-		29AD3C7E16D6101E002E6543 /* SSHolidayTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayTable.m; sourceTree = "<group>"; };
 		29AD3C8416D62354002E6543 /* SSHolidayTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayTests.h; sourceTree = "<group>"; };
 		29AD3C8516D62354002E6543 /* SSHolidayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayTests.m; sourceTree = "<group>"; };
 		29AFF70A16C223E80093EAB4 /* libSSLunarDate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSLunarDate.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +132,12 @@
 		29AFF73D16C2B33B0093EAB4 /* libLunar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libLunar.h; sourceTree = "<group>"; };
 		29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateFormatter.h; sourceTree = "<group>"; };
 		29F0073617C290E200C867E7 /* SSHolidayWestTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayWestTestCase.m; sourceTree = "<group>"; };
+		29F0073817C9B00F00C867E7 /* SSHolidayCountry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayCountry.h; sourceTree = "<group>"; };
+		29F0073917C9B00F00C867E7 /* SSHolidayCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayCountry.m; sourceTree = "<group>"; };
+		29F0073B17C9B30E00C867E7 /* SSHolidayChina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayChina.h; sourceTree = "<group>"; };
+		29F0073C17C9B30E00C867E7 /* SSHolidayChina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayChina.m; sourceTree = "<group>"; };
+		29F0074217C9BCEB00C867E7 /* SSHolidayUS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayUS.h; sourceTree = "<group>"; };
+		29F0074317C9BCEB00C867E7 /* SSHolidayUS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayUS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +162,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		291859FA17CA0536004B4B63 /* Holidays */ = {
+			isa = PBXGroup;
+			children = (
+				29AD3C7416D4F9DB002E6543 /* SSLunarDateHoliday.h */,
+				29AD3C7516D4F9DB002E6543 /* SSLunarDateHoliday.m */,
+				29468AAE17C27463001B14D1 /* SSHolidayWest.m */,
+				29F0073817C9B00F00C867E7 /* SSHolidayCountry.h */,
+				29F0074217C9BCEB00C867E7 /* SSHolidayUS.h */,
+				29F0074317C9BCEB00C867E7 /* SSHolidayUS.m */,
+				291859F417C9E10F004B4B63 /* SSHolidayTW.h */,
+				291859F517C9E10F004B4B63 /* SSHolidayTW.m */,
+				29F0073917C9B00F00C867E7 /* SSHolidayCountry.m */,
+				29F0073B17C9B30E00C867E7 /* SSHolidayChina.h */,
+				291859F717CA0523004B4B63 /* SSHolidayCA.h */,
+				291859FB17CA07B4004B4B63 /* SSHolidayHK.h */,
+				291859FE17CA07C5004B4B63 /* SSHolidayUK.h */,
+				291859FF17CA07C5004B4B63 /* SSHolidayUK.m */,
+				291859FC17CA07B4004B4B63 /* SSHolidayHK.m */,
+				291859F817CA0523004B4B63 /* SSHolidayCA.m */,
+				29F0073C17C9B30E00C867E7 /* SSHolidayChina.m */,
+				29468AAF17C27464001B14D1 /* SSHolidayWest.h */,
+			);
+			name = Holidays;
+			sourceTree = "<group>";
+		};
 		29AFF6FF16C223E80093EAB4 = {
 			isa = PBXGroup;
 			children = (
@@ -178,19 +220,14 @@
 		29AFF70F16C223E80093EAB4 /* SSLunarDate */ = {
 			isa = PBXGroup;
 			children = (
-				29468AAE17C27463001B14D1 /* SSHolidayWest.m */,
-				29468AAF17C27464001B14D1 /* SSHolidayWest.h */,
+				291859FA17CA0536004B4B63 /* Holidays */,
 				29177BEB16C386F400E66041 /* SSLunarDateType.h */,
 				29177BF816C38BBF00E66041 /* SSLunarDateFormatter.m */,
 				29AFF73E16C2C2CB0093EAB4 /* SSLunarDateFormatter.h */,
-				29AD3C7416D4F9DB002E6543 /* SSLunarDateHoliday.h */,
-				29AD3C7516D4F9DB002E6543 /* SSLunarDateHoliday.m */,
 				29AFF71216C223E80093EAB4 /* SSLunarDate.h */,
 				29AFF71416C223E80093EAB4 /* SSLunarDate.m */,
 				29AD3C7016D4F8DF002E6543 /* SSHolidayManager.h */,
 				29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */,
-				29AD3C7D16D6101E002E6543 /* SSHolidayTable.h */,
-				29AD3C7E16D6101E002E6543 /* SSHolidayTable.m */,
 				29AFF73D16C2B33B0093EAB4 /* libLunar.h */,
 				29AFF73616C226C40093EAB4 /* libLunar.c */,
 				29AFF71016C223E80093EAB4 /* Supporting Files */,
@@ -349,11 +386,17 @@
 				29D5CF5316EA2D700095319A /* SSLunarDateTests-Info.plist in Sources */,
 				29AFF71516C223E80093EAB4 /* SSLunarDate.m in Sources */,
 				29AFF73716C226C40093EAB4 /* libLunar.c in Sources */,
+				291859F617C9E10F004B4B63 /* SSHolidayTW.m in Sources */,
+				29F0073A17C9B00F00C867E7 /* SSHolidayCountry.m in Sources */,
+				291859FD17CA07B4004B4B63 /* SSHolidayHK.m in Sources */,
+				29F0074417C9BCEB00C867E7 /* SSHolidayUS.m in Sources */,
+				29F0073D17C9B30E00C867E7 /* SSHolidayChina.m in Sources */,
 				29177BF916C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */,
 				29AD3C7216D4F8DF002E6543 /* SSHolidayManager.m in Sources */,
 				29468AB017C27464001B14D1 /* SSHolidayWest.m in Sources */,
 				29AD3C7616D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */,
-				29AD3C7F16D6101E002E6543 /* SSHolidayTable.m in Sources */,
+				29185A0017CA07C5004B4B63 /* SSHolidayUK.m in Sources */,
+				291859F917CA0523004B4B63 /* SSHolidayCA.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +411,6 @@
 				29177BFA16C38BBF00E66041 /* SSLunarDateFormatter.m in Sources */,
 				29AD3C7316D4F8DF002E6543 /* SSHolidayManager.m in Sources */,
 				29AD3C7716D4F9DB002E6543 /* SSLunarDateHoliday.m in Sources */,
-				29AD3C8016D6101E002E6543 /* SSHolidayTable.m in Sources */,
 				29AD3C8616D62354002E6543 /* SSHolidayTests.m in Sources */,
 				29F0073717C290E200C867E7 /* SSHolidayWestTestCase.m in Sources */,
 			);

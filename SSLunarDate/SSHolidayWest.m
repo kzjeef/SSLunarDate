@@ -43,6 +43,17 @@
     return [cal dateFromComponents:parts];
 }
 
+- (NSDate *) getEasterMonday: (int) year
+{
+    // good Friday is two day before easter day
+    NSDate *easterDay = [self getEaster:year];
+    NSDateComponents *c = [[NSDateComponents  alloc] init];
+    c.day = -2;
+ 
+    return [[NSCalendar currentCalendar]
+	       dateByAddingComponents:c toDate:easterDay options:0];
+}
+
 // calculate easter sunday
 - (NSDate *) getEaster: (int) year
 {
@@ -84,7 +95,7 @@
 	       dateByAddingComponents:c toDate:easterDay options:0];
 }
 
-- (NSDate *) getGoodFirdayNextDay: (int) year
+- (NSDate *) getGoodFridayNextDay: (int) year
 {
     // one day after good Friday
     NSDate *easterDay = [self getEaster:year];
@@ -166,7 +177,7 @@
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 10;
-    c.weekdayOrdinal = 2;	// third week
+    c.weekdayOrdinal = 2;
     c.weekday = 2;		// Monday
     c.year = year;
     
@@ -185,6 +196,68 @@
     c.year = year;
     
     return [calendar dateFromComponents:c];
+}
+
+
+// 1st Monday in May
+- (NSDate *) getMayBankDay: (int) year
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *c = [[NSDateComponents alloc] init];
+
+    c.month = 5;
+    c.weekdayOrdinal = 1;	// 1st
+    c.weekday = 2;		// Monday
+    c.year = year;
+    
+    return [calendar dateFromComponents:c];
+}
+
+// last Monday in may
+- (NSDate *) getSpringBankDay: (int) year
+{
+    return [self getMemorialDay:year];
+}
+
+
+// last Monday in August
+- (NSDate *) getLateSummaryBankHoliday: (int) year
+{
+
+    NSCalendar* calendar = [NSCalendar currentCalendar] ;
+    NSDateComponents* firstMondayNextMonthComponents = [NSDateComponents new] ;
+    firstMondayNextMonthComponents.month = 10 ;
+    firstMondayNextMonthComponents.weekdayOrdinal = 1 ;
+    firstMondayNextMonthComponents.weekday = 2 ; //Monday
+    firstMondayNextMonthComponents.year = year;
+    NSDate* firstMondayNextMonth = [calendar
+                                 dateFromComponents:firstMondayNextMonthComponents] ;
+// 
+
+    NSDateComponents* subtractAWeekComponents = [NSDateComponents new] ;
+    subtractAWeekComponents.week = -1 ;
+    NSDate* day = [calendar dateByAddingComponents:subtractAWeekComponents
+                                                    toDate:firstMondayNextMonth options:0] ;
+    return day;
+    
+}
+
+- (NSDate *) getBoxingDay: (int) year
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *c = [[NSDateComponents alloc] init];
+
+    c.month = 12;
+    c.day = 26;
+    c.year = year;
+
+    NSDate *d = [calendar dateFromComponents:c];
+    NSDateComponents *cc = [calendar components:NSDayCalendarUnit fromDate:d];
+    if (cc.weekday == 1) {// if sunday, move to next monday
+        c.day = 27;
+        return [calendar dateFromComponents:c];
+    } else
+        return d;
 }
 
 @end

@@ -58,6 +58,9 @@
     NSLog(@"2013 Easter Day: %@", [formatter stringFromDate:[h getEaster:2013]]);
     [self isDateEqual:2013 month:3 day:31 withDate:[h getEaster:2013]];
 
+    NSLog(@"2013 Easter Monday: %@", [formatter stringFromDate:[h getEasterMonday:2013]]);
+    [self isDateEqual:2013 month:4 day:1 withDate:[h getEasterMonday:2013]];
+
     NSLog(@"2013 GoodFirday Day: %@", [formatter stringFromDate:[h getGoodFriday:2013]]);
     [self isDateEqual:2013 month:3 day:29 withDate:[h getGoodFriday:2013]];
     

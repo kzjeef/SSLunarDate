@@ -23,17 +23,39 @@
 
 #import <Foundation/Foundation.h>
 
+// United Kingdom holiday
+#define HOLIDAY_GOOD_FRIDAY      NSLocalizedString(@"Good Friday","")
+#define HOLIDAY_GOOD_FRIDAY_NEXT NSLocalizedString(@"The day following Good Friday","")
+#define HOLIDAY_EASTER_DAY       NSLocalizedString(@"Easter Day","")
+#define HOLIDAY_EASTER_MONDAY    NSLocalizedString(@"Easter Monday","")
+#define HOLIDAY_MAY_BANK_DAY     NSLocalizedString(@"May Day Bank Holiday", "")
+#define HOLIDAY_SPRING_BANK_DAY NSLocalizedString(@"Spring Bank Holiday", "")
+#define HOLIDAY_LATE_SUMMERY_BANK_DAY   NSLocalizedString(@"Late Summer Bank Holiday","")
+#define HOLIDAY_BOXING_DAY      NSLocalizedString(@"Boxing Day","")
+
+// US Holiday
+#define HOLIDAY_MLK_BIRTHDAY    NSLocalizedString(@"Birthday of MLK", "")
+#define HOLIDAY_MEM_DAY         NSLocalizedString(@"Memorial Day", "")
+#define HOLIDAY_LABOR_DAY       NSLocalizedString(@"Labor Day", "")
+#define HOLIDAY_COLUMBUS_DAY    NSLocalizedString(@"Columbus Day", "")
+#define HOLIDAY_THANKS_DAY      NSLocalizedString(@"Thanksgiving Day", "")
 
 @interface SSHolidayWest : NSObject
 
 - (NSDate *) getEaster: (int) year;
+- (NSDate *) getEasterMonday: (int) year;
 - (NSDate *) getGoodFriday: (int) year;
-- (NSDate *) getGoodFirdayNextDay: (int) year;
+- (NSDate *) getGoodFridayNextDay: (int) year;
 - (NSDate *) getMartinLutherKingBirthday: (int) year;
 - (NSDate *) getPresidentsDay: (int) year;
 - (NSDate *) getMemorialDay: (int) year;
 - (NSDate *) getLaborDay: (int) year;
 - (NSDate *) getColumbusDay: (int) year;
 - (NSDate *) getThanksGivingDay: (int) year;
+
+- (NSDate *) getMayBankDay: (int) year;
+- (NSDate *) getSpringBankDay: (int) year;
+- (NSDate *) getLateSummaryBankHoliday: (int) year;
+- (NSDate *) getBoxingDay: (int) year;
 
 @end

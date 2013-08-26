@@ -21,61 +21,59 @@
 
 #import "SSHolidayManager.h"
 #import "SSLunarDate.h"
-#import "SSHolidayTable.h"
-
+#import "SSHolidayCountry.h"
+#import "SSHolidayUK.h"
+#import "SSHolidayTW.h"
+#import "SSHolidayUS.h"
+#import "SSHolidayChina.h"
+#import "SSHolidayHK.h"
+#import "SSHolidayCA.h"
 
 @interface SSHolidayManager ()
 {
     SSHolidayRegion _region;
-    SSHolidayTable  *_table;
-    NSCalendar     *_calendar;
-    
+    SSHolidayCountry *_country;    
 }
+
+@property (readonly) SSHolidayCountry *country;
 @end
 
 @implementation SSHolidayManager
-
-- (id) init
-{
-    self = [super init];
-    if (self) {
-        _region = SSHolidayRegionChina;
-        _calendar = [NSCalendar currentCalendar];
-        _table = [[SSHolidayTable alloc] initWithRegion:_region calendar:_calendar];
-    }
-    return self;
-}
 
 - (id) initWithRegion:(SSHolidayRegion)region
 {
     self = [super init];
     if (self) {
         _region = region;
-        _calendar = [NSCalendar currentCalendar];
-        _table = [[SSHolidayTable alloc] initWithRegion:_region calendar:_calendar];
+        _country = [self allocateHolidayAlgoByRegion:region];
     }
     return self;
 }
 
+- (SSHolidayCountry *) allocateHolidayAlgoByRegion:(SSHolidayRegion)r {
+    switch (r) {
+    case SSHolidayRegionChina:
+        return [[SSHolidayChina alloc] init];
+    case SSHolidayRegionHongkong:
+        return [[SSHolidayHK alloc] init];
+    case SSHolidayRegionTaiwan:
+        return [[SSHolidayTW alloc] init];
+    case SSHolidayRegionUS:
+        return [[SSHolidayUS alloc] init];
+    case SSHolidayRegionCanadia:
+        return [[SSHolidayCA alloc] init];
+    case SSHolidayRegionUK:
+        return [[SSHolidayUK alloc] init];
+    default:
+        NSAssert(false, @"should not be here");
+        return [[SSHolidayChina alloc] init];
+    }
+}
+
+
 - (NSArray *) getHolidayListForDate:(NSDate *)date
 {
-    NSMutableArray *result = [[NSMutableArray alloc] init];
-    
-    if (_region >= SSHolidayRegionChina && _region <= SSHolidayRegionTaiwan) {
-        // For those region, we needs to deal with lunar holiday.
-        SSLunarDate *lunarDate = [[SSLunarDate alloc] initWithDate:date calendar:_calendar];
-        if ([lunarDate isLunarHolidayWithRegion:_region])
-            [result addObject:[lunarDate getLunarHolidayNameWithRegion:_region]];
-    }
-
-    NSArray *a = [_table getHolidayListWithDate:date];
-    if ([a lastObject] != nil)
-        [result addObjectsFromArray:a];
-    
-    if ([result  lastObject] == nil)
-        return  nil;
-    else
-        return result;
+    return [_country getHolidayListForDate:date];
 }
 
 
