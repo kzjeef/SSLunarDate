@@ -41,7 +41,10 @@
 #define HOLIDAY_THANKS_DAY      NSLocalizedString(@"Thanksgiving Day", "")
 
 @interface SSHolidayWest : NSObject
-
+{
+    NSCalendar *currentCalendar;
+}
+- (id) initWithCalendar:(NSCalendar *) calendar;
 - (NSDate *) getEaster: (int) year;
 - (NSDate *) getEasterMonday: (int) year;
 - (NSDate *) getGoodFriday: (int) year;

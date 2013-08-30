@@ -28,12 +28,21 @@
 #import "SSHolidayWest.h"
 
 @implementation SSHolidayWest
+// TODO: need implement a cache with current year.
 
+- (id) initWithCalendar:(NSCalendar *)calendar
+{
+    self = [super init];
+    if (self) {
+        currentCalendar = calendar;
+    }
+    return self;
+}
 
 - (NSDate *) getDateFromYear:(int) year month: (int) month day: (int) day
 {
     unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSCalendar *cal = currentCalendar;
     NSDateComponents *parts = [cal components:flags
 				     fromDate:[NSDate date]];
     [parts setYear:year];
@@ -50,7 +59,7 @@
     NSDateComponents *c = [[NSDateComponents  alloc] init];
     c.day = -2;
  
-    return [[NSCalendar currentCalendar]
+    return [currentCalendar
 	       dateByAddingComponents:c toDate:easterDay options:0];
 }
 
@@ -91,7 +100,7 @@
     NSDateComponents *c = [[NSDateComponents  alloc] init];
     c.day = -2;
  
-    return [[NSCalendar currentCalendar]
+    return [currentCalendar
 	       dateByAddingComponents:c toDate:easterDay options:0];
 }
 
@@ -102,7 +111,7 @@
     NSDateComponents *c = [[NSDateComponents  alloc] init];
     c.day = -1;
     
-    return [[NSCalendar currentCalendar]
+    return [currentCalendar
 	       dateByAddingComponents:c toDate:easterDay options:0];
     
 }
@@ -110,7 +119,7 @@
 // Third Monday in January, Birthday of Dr. Martin Luther King, Jr.
 - (NSDate *) getMartinLutherKingBirthday: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 1;
@@ -124,7 +133,7 @@
 // Third Monday in Feb
 - (NSDate *) getPresidentsDay: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 2;
@@ -138,7 +147,7 @@
 // Last Monday in May	Memorial Day
 - (NSDate *) getMemorialDay: (int) year
 {
-    NSCalendar* calendar = [NSCalendar currentCalendar] ;
+    NSCalendar* calendar = currentCalendar;
     NSDateComponents* firstMondayInJuneComponents = [NSDateComponents new] ;
     firstMondayInJuneComponents.month = 6 ;
     firstMondayInJuneComponents.weekdayOrdinal = 1 ;
@@ -159,7 +168,7 @@
 // First Monday in Septembe Labor Day
 - (NSDate *) getLaborDay: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 9;
@@ -173,7 +182,7 @@
 // Second Monday in October Columbus Day
 - (NSDate *) getColumbusDay: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 10;
@@ -187,7 +196,7 @@
 // Fourth Thursday in November
 - (NSDate *) getThanksGivingDay: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 11;
@@ -202,7 +211,7 @@
 // 1st Monday in May
 - (NSDate *) getMayBankDay: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 5;
@@ -224,7 +233,7 @@
 - (NSDate *) getLateSummaryBankHoliday: (int) year
 {
 
-    NSCalendar* calendar = [NSCalendar currentCalendar] ;
+    NSCalendar* calendar = currentCalendar;
     NSDateComponents* firstMondayNextMonthComponents = [NSDateComponents new] ;
     firstMondayNextMonthComponents.month = 10 ;
     firstMondayNextMonthComponents.weekdayOrdinal = 1 ;
@@ -244,7 +253,7 @@
 
 - (NSDate *) getBoxingDay: (int) year
 {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = currentCalendar;
     NSDateComponents *c = [[NSDateComponents alloc] init];
 
     c.month = 12;
@@ -252,7 +261,7 @@
     c.year = year;
 
     NSDate *d = [calendar dateFromComponents:c];
-    NSDateComponents *cc = [calendar components:NSDayCalendarUnit fromDate:d];
+    NSDateComponents *cc = [calendar components:NSCalendarUnitWeekday fromDate:d];
     if (cc.weekday == 1) {// if sunday, move to next monday
         c.day = 27;
         return [calendar dateFromComponents:c];

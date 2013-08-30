@@ -25,7 +25,6 @@
 typedef enum {
     SSHolidayRegionChina = 0,
     SSHolidayRegionHongkong,
-    SSHolidayRegionMocao,
     SSHolidayRegionTaiwan,
     SSHolidayRegionUS,
     SSHolidayRegionCanadia,

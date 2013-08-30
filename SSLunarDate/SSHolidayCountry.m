@@ -70,7 +70,7 @@
 - (SSHolidayWest *) west
 {
     if (_west == nil) 
-        _west = [[SSHolidayWest alloc] init];
+        _west = [[SSHolidayWest alloc] initWithCalendar:self.calendar];
     return _west;
 }
 
