@@ -54,10 +54,11 @@
 
 - (NSDate *) getEasterMonday: (int) year
 {
+
     // good Friday is two day before easter day
     NSDate *easterDay = [self getEaster:year];
     NSDateComponents *c = [[NSDateComponents  alloc] init];
-    c.day = -2;
+    c.day = 1;
  
     return [currentCalendar
 	       dateByAddingComponents:c toDate:easterDay options:0];

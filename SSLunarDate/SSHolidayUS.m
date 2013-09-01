@@ -55,6 +55,12 @@
 
 // FIXME: I really don't happy with these code, should be more table
 // way, but I don't want setup a function pointer in Obj-c.
+
+        d = [self.west getGoodFriday:_cachedYear];
+        [dict setObject:HOLIDAY_GOOD_FRIDAY forKey:[self convertDateIndex:d]];
+
+        d = [self.west getEaster:_cachedYear];
+        [dict setObject:HOLIDAY_EASTER_DAY forKey:[self convertDateIndex:d]];
         
         d = [self.west getMartinLutherKingBirthday:_cachedYear];
         [dict setObject:HOLIDAY_MLK_BIRTHDAY  forKey:[self convertDateIndex:d]];

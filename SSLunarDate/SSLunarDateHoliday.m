@@ -70,7 +70,9 @@ static SSLunarDateHoliday *_sslunarholiday = NULL;
                           @"0909":NSLocalizedString(@"重阳节",""),
                           // dong zhi
                           @"1208":NSLocalizedString(@"腊八",""),
-                          @"1229":NSLocalizedString(@"除夕","")
+                          @"1230":NSLocalizedString(@"除夕","")
+
+                          // FIXME: 2013's Chu Xi is error!!!!
                           };
     
     return _lunarHoliday;

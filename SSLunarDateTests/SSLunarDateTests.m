@@ -57,6 +57,7 @@
     
     NSLog(@"2013 qingming: %@", [holiday getQingmingDate:2013]);
     
+
     STAssertTrue([@"0405" isEqualToString:[holiday getQingmingDate:2010]] , @"qingming calc not good");
     STAssertTrue([@"0405" isEqualToString:[holiday getQingmingDate:2011]] , @"qingming calc not good");
     STAssertTrue([@"0404" isEqualToString:[holiday getQingmingDate:2013]] , @"qingming calc not good");

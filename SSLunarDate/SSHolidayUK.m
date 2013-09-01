@@ -33,7 +33,8 @@
                                                                      dict:[self fixedHoliday]]];
     
     NSDateComponents *c = [self.calendar components:NSYearCalendarUnit fromDate:date];
-    
+
+    NSAssert(c.year != 0, @"should not zero");
     if (_cachedYear != c.year) {
         _cachedYear = c.year;
         _variableHoliday = nil;
@@ -68,6 +69,9 @@
 
         d = [self.west getGoodFriday:_cachedYear];
         [dict setObject:HOLIDAY_GOOD_FRIDAY forKey:[self convertDateIndex:d]];
+
+        d = [self.west getEaster:_cachedYear];
+        [dict setObject:HOLIDAY_EASTER_DAY forKey:[self convertDateIndex:d]];
 
         d = [self.west getEasterMonday:_cachedYear];
         [dict setObject:HOLIDAY_EASTER_MONDAY

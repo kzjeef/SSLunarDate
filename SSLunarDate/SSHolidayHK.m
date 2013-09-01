@@ -28,6 +28,15 @@
     NSMutableArray *result = [[NSMutableArray alloc] init];
     SSLunarDate *lunarDate = [[SSLunarDate alloc] initWithDate:date
                                                       calendar:self.calendar];
+
+        NSDateComponents *c = [self.calendar components:NSYearCalendarUnit fromDate:date];
+
+    NSAssert(c.year != 0, @"should not zero");
+    if (_cachedYear != c.year) {
+        _cachedYear = c.year;
+        _variableHoliday = nil;
+    }
+
     NSString *lunar = [lunarDate getLunarHolidayNameWithRegion:self.region];
     if (lunar != nil)
         [result addObject:lunar];
