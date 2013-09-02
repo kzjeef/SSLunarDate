@@ -40,6 +40,9 @@
 #define HOLIDAY_COLUMBUS_DAY    NSLocalizedString(@"Columbus Day", "")
 #define HOLIDAY_THANKS_DAY      NSLocalizedString(@"Thanksgiving Day", "")
 
+// CA Holiday
+#define HOLIDAY_VICTORIA_DAY    NSLocalizedString(@"Victoria Day", "")
+
 @interface SSHolidayWest : NSObject
 {
     NSCalendar *currentCalendar;
@@ -60,5 +63,7 @@
 - (NSDate *) getSpringBankDay: (int) year;
 - (NSDate *) getLateSummaryBankHoliday: (int) year;
 - (NSDate *) getBoxingDay: (int) year;
+
+- (NSDate *) getVictoriaDay: (int) year;
 
 @end

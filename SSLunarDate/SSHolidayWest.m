@@ -270,5 +270,29 @@
         return d;
 }
 
+// Last Monday before 5/25
+- (NSDate *) getVictoriaDay: (int) year
+{
+    NSCalendar *calendar = currentCalendar;
+    NSDateComponents *c = [[NSDateComponents alloc] init];
+
+    c.month = 5;
+    c.day = 24;
+    c.year = year;
+    NSDate *may24 = [calendar dateFromComponents:c];
+    NSDateComponents *cc = [calendar components:NSCalendarUnitWeekday fromDate:may24];
+    
+    // if that day was monday, it equal to zero.
+    // if that day was tue, it equal to 1, minor 1 =
+    NSDateComponents *ccc = [NSDateComponents new];
+    int reminder = cc.weekday - 2;
+    if (reminder >= 0)
+        ccc.day  = - (cc.weekday - 2);
+    else
+        ccc.day = -6; // only happen when 24 is sunday.
+    
+    return [calendar dateByAddingComponents:ccc toDate:may24 options:0];
+}
+
 @end
 

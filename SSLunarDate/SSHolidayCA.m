@@ -55,8 +55,18 @@
         d = [self.west getGoodFriday:_cachedYear];
         [dict setObject:HOLIDAY_GOOD_FRIDAY forKey:[self convertDateIndex:d]];
 
+        d = [self.west getEasterMonday:_cachedYear];
+        [dict setObject:HOLIDAY_EASTER_MONDAY
+                 forKey:[self convertDateIndex:d]];
+
         d = [self.west getLaborDay:_cachedYear];
         [dict setObject:HOLIDAY_LABOR_DAY forKey:[self convertDateIndex:d]];
+        
+        d = [self.west getThanksGivingDay:_cachedYear];
+        [dict setObject:HOLIDAY_THANKS_DAY forKey:[self convertDateIndex:d]];
+
+        d = [self.west getVictoriaDay:_cachedYear];
+        [dict setObject:HOLIDAY_VICTORIA_DAY forKey:[self convertDateIndex:d]];
         
         _variableHoliday = dict;
     }
