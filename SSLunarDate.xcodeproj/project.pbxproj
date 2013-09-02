@@ -110,7 +110,7 @@
 		292EE30516EA0DF600A007DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		29468AAE17C27463001B14D1 /* SSHolidayWest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayWest.m; sourceTree = "<group>"; };
 		29468AAF17C27464001B14D1 /* SSHolidayWest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayWest.h; sourceTree = "<group>"; };
-		29468AB417C2836B001B14D1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		29AAF46E17D4F88500989BE2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29AD3C7016D4F8DF002E6543 /* SSHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHolidayManager.h; sourceTree = "<group>"; };
 		29AD3C7116D4F8DF002E6543 /* SSHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHolidayManager.m; sourceTree = "<group>"; };
 		29AD3C7416D4F9DB002E6543 /* SSLunarDateHoliday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLunarDateHoliday.h; sourceTree = "<group>"; };
@@ -209,7 +209,6 @@
 		29AFF70C16C223E80093EAB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				29468AB417C2836B001B14D1 /* XCTest.framework */,
 				29AFF70D16C223E80093EAB4 /* Foundation.framework */,
 				29AFF71C16C223E80093EAB4 /* SenTestingKit.framework */,
 				291266F716CF661200FFB202 /* UIKit.framework */,
@@ -325,6 +324,7 @@
 				en,
 				"zh-Hans",
 				"zh-Hant",
+				ja,
 			);
 			mainGroup = 29AFF6FF16C223E80093EAB4;
 			productRefGroup = 29AFF70B16C223E80093EAB4 /* Products */;
@@ -443,6 +443,7 @@
 				29AFF72816C223E80093EAB4 /* en */,
 				29177BF716C38B5B00E66041 /* zh-Hans */,
 				292EE30516EA0DF600A007DC /* zh-Hant */,
+				29AAF46E17D4F88500989BE2 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
