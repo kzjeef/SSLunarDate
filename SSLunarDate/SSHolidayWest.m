@@ -262,7 +262,7 @@
     c.year = year;
 
     NSDate *d = [calendar dateFromComponents:c];
-    NSDateComponents *cc = [calendar components:NSCalendarUnitWeekday fromDate:d];
+    NSDateComponents *cc = [calendar components:kCFCalendarUnitWeekday fromDate:d];
     if (cc.weekday == 1) {// if sunday, move to next monday
         c.day = 27;
         return [calendar dateFromComponents:c];
@@ -280,7 +280,7 @@
     c.day = 24;
     c.year = year;
     NSDate *may24 = [calendar dateFromComponents:c];
-    NSDateComponents *cc = [calendar components:NSCalendarUnitWeekday fromDate:may24];
+    NSDateComponents *cc = [calendar components:kCFCalendarUnitWeekday fromDate:may24];
     
     // if that day was monday, it equal to zero.
     // if that day was tue, it equal to 1, minor 1 =
