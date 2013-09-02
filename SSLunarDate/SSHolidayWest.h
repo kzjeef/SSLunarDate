@@ -30,7 +30,7 @@
 #define HOLIDAY_EASTER_MONDAY    NSLocalizedString(@"Easter Monday","")
 #define HOLIDAY_MAY_BANK_DAY     NSLocalizedString(@"May Day Bank Holiday", "")
 #define HOLIDAY_SPRING_BANK_DAY NSLocalizedString(@"Spring Bank Holiday", "")
-#define HOLIDAY_LATE_SUMMERY_BANK_DAY   NSLocalizedString(@"Late Summer Bank Holiday","")
+#define HOLIDAY_LATE_SUMMERY_BANK_DAY   NSLocalizedString(@"Summer Bank Holiday","")
 #define HOLIDAY_BOXING_DAY      NSLocalizedString(@"Boxing Day","")
 
 // US Holiday

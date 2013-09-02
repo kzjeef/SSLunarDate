@@ -236,7 +236,7 @@
 
     NSCalendar* calendar = currentCalendar;
     NSDateComponents* firstMondayNextMonthComponents = [NSDateComponents new] ;
-    firstMondayNextMonthComponents.month = 10 ;
+    firstMondayNextMonthComponents.month = 9 ;
     firstMondayNextMonthComponents.weekdayOrdinal = 1 ;
     firstMondayNextMonthComponents.weekday = 2 ; //Monday
     firstMondayNextMonthComponents.year = year;
